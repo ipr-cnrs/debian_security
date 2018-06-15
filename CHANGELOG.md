@@ -2,3 +2,4 @@
 
 ### Features
 * Install debsecan
+* Debsecan: Configuration

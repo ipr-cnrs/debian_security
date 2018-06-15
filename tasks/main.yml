@@ -12,3 +12,12 @@
     install_recommends: False
   with_flattened:
     - '{{ deb_sec__required_packages }}'
+# Debsecan [[[1
+- name: Debsecan configuration
+  template:
+    src: 'etc/default/debsecan.j2'
+    dest: '/etc/default/debsecan'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  when: (deb_sec__deploy_state == "present")

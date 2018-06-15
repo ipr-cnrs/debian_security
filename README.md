@@ -15,9 +15,13 @@ A role that provide some security tools for Debian.
 
 ## Role Variables
 
-* **deb_sec__required_packages** : List of required packages [default : `debsecan`]
-* **deb_sec__deploy_state** : The desired state this role should achieve. [default : `present`].
-
+* **deb_sec__required_packages** : List of required packages [default : `debsecan`].
+* **deb_sec__deploy_state** : The desired state this role should achieve [default : `present`].
+* **deb_sec__debsecan_report** : If daily reports should be enable [default : `true`].
+* **deb_sec__debsecan_suite** : Suite name used to produce more informative output [default : `{{ ansible_distribution_release }}`].
+* **deb_sec__debsecan_mailto** : Mail address to which reports are sent [default : `root`].
+* **deb_sec__debsecan_source** : The URL from which vulnerability data is downloaded [default : `''`].
+*
 ## Example Playbook
 
 * Default behaviour :
@@ -32,6 +36,7 @@ A role that provide some security tools for Debian.
 
 This role will :
 * Install some security tools (eg. Debsecan,…).
+* Configure Debsecan.
 
 ## Development
 

@@ -27,3 +27,47 @@ deb_sec__required_packages:
 deb_sec__deploy_state: 'present'
                                                                    # ]]]
                                                                    # ]]]
+# Debsecan [[[
+# ------------
+
+# .. envvar:: deb_sec__debsecan_report [[[
+#
+# If daily reports should be enable. Possible options :
+#
+# ``true``
+#   Default.
+#
+# ``false``
+#
+deb_sec__debsecan_report: true
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_suite [[[
+#
+# The suite name used to produce more informative output. Possible options are
+# all Debian (and derivative) codename (eg. stretch) not the temporal
+# name (eg. stable,…).
+#
+# ``ansible_distribution_release``
+#   Default. Use ansible variable to determine the current codename.
+#
+deb_sec__debsecan_suite: '{{ ansible_distribution_release }}'
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_mailto [[[
+#
+# Mail address to which reports are sent.
+#
+# ``root``
+#   Default.
+#
+deb_sec__debsecan_mailto: 'root'
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_source [[[
+#
+# The URL from which vulnerability data is downloaded.
+
+# ``''``
+#   Default. Empty for the built-in default.
+#
+deb_sec__debsecan_source: ''
+                                                                   # ]]]
+                                                                   # ]]]

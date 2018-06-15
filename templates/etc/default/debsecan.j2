@@ -1,0 +1,19 @@
+# {{ ansible_managed }}
+#
+# Configuration file for debsecan.  Contents of this file should
+# adhere to the KEY=VALUE shell syntax.  This file may be edited by
+# debsecan's scripts, but your modifications are preserved.
+
+# If true, enable daily reports, sent by email.
+REPORT={{ deb_sec__debsecan_report }}
+
+# For better reporting, specify the correct suite here, using the code
+# name (that is, "sid" instead of "unstable").
+SUITE={{ deb_sec__debsecan_suite }}
+
+# Mail address to which reports are sent.
+MAILTO={{ deb_sec__debsecan_mailto }}
+
+# The URL from which vulnerability data is downloaded.  Empty for the
+# built-in default.
+SOURCE={{ deb_sec__debsecan_source }}
