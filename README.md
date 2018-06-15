@@ -21,7 +21,11 @@ A role that provide some security tools for Debian.
 * **deb_sec__debsecan_suite** : Suite name used to produce more informative output [default : `{{ ansible_distribution_release }}`].
 * **deb_sec__debsecan_mailto** : Mail address to which reports are sent [default : `root`].
 * **deb_sec__debsecan_source** : The URL from which vulnerability data is downloaded [default : `''`].
-*
+* **deb_sec__debsecan_cron_disabled** : If the Debsecan job should be disabled [default : `false`].
+* **deb_sec__debsecan_cron_job** : The command to execute for Debsecan cron [default : `test -x /usr/bin/debsecan && /usr/bin/debsecan --cron`].
+* **deb_sec__debsecan_cron_special_time** : Periodicity of the cron job for Debsecan [default : `daily`].
+* **deb_sec__debsecan_cron_user** : User whose run the job [default : `daemon`].
+
 ## Example Playbook
 
 * Default behaviour :
@@ -36,7 +40,7 @@ A role that provide some security tools for Debian.
 
 This role will :
 * Install some security tools (eg. Debsecan,…).
-* Configure Debsecan.
+* Configure and set a cron job for Debsecan.
 
 ## Development
 

@@ -64,10 +64,49 @@ deb_sec__debsecan_mailto: 'root'
 # .. envvar:: deb_sec__debsecan_source [[[
 #
 # The URL from which vulnerability data is downloaded.
-
+#
 # ``''``
 #   Default. Empty for the built-in default.
 #
 deb_sec__debsecan_source: ''
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_cron_disabled [[[
+#
+# If the Debsecan job should be disabled. Possible options :
+#
+# ``false``
+#   Default. According to Debsecan package.
+#
+# ``true``
+#   Comment the job in the cron file.
+#
+deb_sec__debsecan_cron_disabled: false
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_cron_job [[[
+#
+# The command to execute for Debsecan cron.
+#
+# ``test -x /usr/bin/debsecan && /usr/bin/debsecan --cron``
+#   Default. According to Debsecan package.
+#
+deb_sec__debsecan_cron_job: 'test -x /usr/bin/debsecan && /usr/bin/debsecan --cron'
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_cron_special_time [[[
+#
+# Periodicity of the cron job for Debsecan.
+#
+# ``daily``
+#   Default. Run the job everyday.
+#
+deb_sec__debsecan_cron_special_time: 'daily'
+                                                                   # ]]]
+# .. envvar:: deb_sec__debsecan_cron_user [[[
+#
+# User whose run the job.
+#
+# ``daemon``
+#   Default. According to Debsecan package.
+#
+deb_sec__debsecan_cron_user: 'daemon'
                                                                    # ]]]
                                                                    # ]]]

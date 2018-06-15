@@ -13,6 +13,7 @@
   with_flattened:
     - '{{ deb_sec__required_packages }}'
 # Debsecan [[[1
+# Configuration [[[
 - name: Debsecan configuration
   template:
     src: 'etc/default/debsecan.j2'
@@ -21,3 +22,26 @@
     group: 'root'
     mode: '0644'
   when: (deb_sec__deploy_state == "present")
+                                                                   # ]]]
+# Cron job [[[
+- name: Debsecan disable default cron file
+  file:
+    path: '/etc/cron.d/debsecan'
+    state: absent
+
+- name: Debsecan manage cron job
+  cron:
+    cron_file: '/etc/cron.d/debsecan_ansible'
+    name: 'debsecan_ansible'
+    job: '{{ deb_sec__debsecan_cron_job }}'
+    disabled: '{{ deb_sec__debsecan_cron_disabled }}'
+    special_time: '{{ deb_sec__debsecan_cron_special_time }}'
+    user: '{{ deb_sec__debsecan_cron_user }}'
+  when: (deb_sec__deploy_state == "present")
+
+- name: Debsecan purge cron job
+  file:
+    path: '/etc/cron.d/debsecan_ansible'
+    state: absent
+  when: (deb_sec__deploy_state == "absent")
+                                                                   # ]]]

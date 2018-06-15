@@ -2,4 +2,4 @@
 
 ### Features
 * Install debsecan
-* Debsecan: Configuration
+* Debsecan: Configuration and cron job
