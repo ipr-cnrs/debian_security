@@ -1,0 +1,14 @@
+galaxy_info:
+  author: "Jérémy Gardais"
+  description: "Tools and configuration to secure Debian system"
+  license: WTFPL
+  company: IPR
+  issue_tracker_url: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.debian_security/issues
+  min_ansible_version: 2.5
+  platforms:
+  - name: Debian
+    versions:
+    - stretch
+  galaxy_tags:
+    - debian
+    - security

@@ -1,0 +1,29 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# ipr-cnrs.debian_security default variables [[[
+# ==============================================
+
+# Packages and installation [[[
+# -----------------------------
+
+# .. envvar:: deb_sec__base_packages [[[
+#
+# List of base packages to install.
+deb_sec__required_packages:
+  - 'debsecan'
+                                                                   # ]]]
+# .. envvar:: deb_sec__deploy_state [[[
+#
+# What is the desired state which this role should achieve? Possible options:
+#
+# ``present``
+#   Default. Ensure that required packages are installed and configured as
+#   requested.
+#
+# ``absent``
+#   Ensure that required packages are uninstalled and configuration removed.
+#
+deb_sec__deploy_state: 'present'
+                                                                   # ]]]
+                                                                   # ]]]
