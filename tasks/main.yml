@@ -11,7 +11,7 @@
                          else "absent" }}'
     install_recommends: False
   with_flattened:
-    - '{{ deb_sec__required_packages }}'
+    - '{{ deb_sec__required_packages | to_nice_json }}'
 # Debsecan [[[1
 # Configuration [[[
 - name: Debsecan configuration
