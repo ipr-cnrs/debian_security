@@ -12,6 +12,9 @@
     install_recommends: False
   with_flattened:
     - '{{ deb_sec__required_packages | to_nice_json }}'
+  register: pkg_result
+  until: pkg_result is success
+
 # Debsecan [[[1
 # Configuration [[[
 - name: Debsecan configuration
