@@ -1,3 +1,7 @@
+---
+
+dependencies: []
+
 galaxy_info:
   author: "Jérémy Gardais"
   description: "Tools and configuration to secure Debian system"
