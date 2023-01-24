@@ -11,7 +11,7 @@
 #
 # List of base packages to install.
 deb_sec__required_packages:
-  - 'debsecan'
+  - debsecan
                                                                    # ]]]
 # .. envvar:: deb_sec__deploy_state [[[
 #
